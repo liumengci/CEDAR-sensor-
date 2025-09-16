@@ -17,7 +17,7 @@ It can be used to collect **air quality data** (e.g., particulate matter, gas le
 ---
 
 ## 📡 Wiring Diagram
-![Wiring Diagram](docs/wiring.png)
+![Wiring Diagram](Wiring%20Diagram.png)
 
 ---
 
