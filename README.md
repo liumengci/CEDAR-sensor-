@@ -6,13 +6,23 @@ It can be used to collect **air quality data** (e.g., particulate matter, gas le
 ---
 
 ## 🔧 Components
-- ESP32 development board  
-- PM2.5 sensor module (UART)  
+- External DC power input header + power switch  
+- MP1584 step-down (to 5V) power module  
+- ESP32 development board / MCU circuit  
+- PMS5003 PM2.5 sensor (UART)  
 - SHT30 temperature & humidity sensor (I²C)  
-- Sound sensor (I²S / Analog)  
-- OLED display (I²C)  
-- 4G communication module (UART)  
-- Power supply (Lithium battery + charging circuit + power switch)  
+- INMP441 digital microphone (I²S)  
+- 0.96" OLED display (I²C, SSD1306)  
+- ATGM336H GPS module (UART)  
+- A7670C 4G Cat.1 communication module (UART, core board model **FS-MCore-A7670CD**)  
+
+---
+
+## 🔋 Power Supply
+The system is designed to support **flexible power options**:
+- **External DC input (recommended)**: connect via the DC header. Input voltage is stepped down by the **MP1584 module** to provide a stable 5V supply for all components.  
+- **Power switch**: included in the circuit to easily turn the system on/off.  
+- **Lithium battery (optional)**: the board can also be powered from a lithium battery pack with a charging & protection circuit. This is useful for portable deployments but not required if DC power is available.  
 
 ---
 
@@ -21,12 +31,11 @@ It can be used to collect **air quality data** (e.g., particulate matter, gas le
 
 ---
 
-
 ## ⚙️ Setup & Usage
 
 1. **Hardware Preparation**  
    - Assemble all components according to the wiring diagram.  
-   - Ensure lithium battery is charged and connected with a power switch.  
+   - Ensure power is supplied either from an external DC source or from a lithium battery with a charging/protection circuit.  
    - Double-check ESP32 pin connections for UART / I²C / I²S.  
 
 2. **Software Installation**  
